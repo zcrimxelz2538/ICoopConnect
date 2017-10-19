@@ -82,6 +82,7 @@ foreach ($events as $event) {
 				case "ข้อมูลสมาชิก"	 :
 					$response = $bot->getProfile($event->getUserId());
 		                    if ($response->isSucceeded()) {
+													if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
 														/* $sql = 'SELECT * FROM debit WHERE user_id = "'.$event->getUserId().'"';
 														$result = $conn->query($sql);
 														$row = $result->fetch_assoc();
@@ -109,11 +110,16 @@ foreach ($events as $event) {
 														$img_url = "https://www.mx7.com/i/18d/piCF5A.png";
 														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "เลขสมาชิก : 00008073 (สมาชิกปกติ) ชื่อบัญชี : นาย00008073", $img_url, $actions);
 														$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
-		                    }
+		                    }else{
+													$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
+	                        $bot->replyText($reply_token, $msg);
+												}
+											}
 					break;
 					case "จำนวนหุ้น"	 :
 						$response = $bot->getProfile($event->getUserId());
 													if ($response->isSucceeded()) {
+														if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
 															$actions = array (
 																// general message action
 																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("31 ก.ค. 2560", "งวดล่าสุด")
@@ -121,11 +127,16 @@ foreach ($events as $event) {
 															$img_url = "https://www.mx7.com/i/079/Idxymc.png";
 															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("หุ้นสะสมรวม", "244,500.00 ฿", $img_url, $actions);
 															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลหุ้น", $button);
+														}else{
+															$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
+															$bot->replyText($reply_token, $msg);
+														}
 													}
 						break;
 						case "ยอดเงินฝาก"	 :
 							$response = $bot->getProfile($event->getUserId());
 														if ($response->isSucceeded()) {
+															if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
 																$actions = array (
 																	// general message action
 																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย อรรถวุฒิ คำมาสาร", "ชื่อบัญชี")
@@ -133,11 +144,16 @@ foreach ($events as $event) {
 																$img_url = "https://www.mx7.com/i/0ef/zduNHo.png";
 																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "คงเหลือ : 100.00 ฿", $img_url, $actions);
 																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินฝาก", $button);
+															}else{
+																$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
+																$bot->replyText($reply_token, $msg);
+															}
 														}
 							break;
 							case "ยอดเงินกู้"	 :
 								$response = $bot->getProfile($event->getUserId());
 															if ($response->isSucceeded()) {
+																if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
 																/* $columnTemplateBuilders = array();
 																$columnTitles = array('เงินกู้สามัญปกติ', 'เงินกู้สามัญ ATM');
 																foreach ($columnTitles as $title) {
@@ -159,7 +175,11 @@ foreach ($events as $event) {
 															$img_url = "https://www.mx7.com/i/205/7HKVmM.png";
 															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สค5600814", "ประเภทเงินกู้ : เงินกู้สามัญปกติ", $img_url, $actions);
 															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินกู้", $button);
-															}
+														}else{
+															$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
+															$bot->replyText($reply_token, $msg);
+														}
+													}
 								break;
 		case "สมัครสมาชิก" :
 		$response = $bot->getProfile($event->getUserId());
