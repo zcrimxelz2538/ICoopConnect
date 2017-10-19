@@ -142,7 +142,7 @@ foreach ($events as $event) {
 																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย อรรถวุฒิ คำมาสาร", "ชื่อบัญชี")
 																);
 																$img_url = "https://www.mx7.com/i/0ef/zduNHo.png";
-																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "ประเภทบัญชี : ออมทรัพย์ ATM            คงเหลือ : 100.00 ฿", $img_url, $actions);
+																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "ประเภทเงินฝาก : ออมทรัพย์ ATM            คงเหลือ : 100.00 ฿", $img_url, $actions);
 																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินฝาก", $button);
 															}else{
 																$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
