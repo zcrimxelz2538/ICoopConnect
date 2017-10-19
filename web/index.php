@@ -104,13 +104,11 @@ foreach ($events as $event) {
 														} */
 														$actions = array (
 															// general message action
-															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("3-5805-00056-66-8", "เลขบัตรประชาชน"),
-															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย00008073", "ชื่อบัญชี"),
-															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("20 พ.ย. 2520 (39 ปี 10 เดือน)", "วันเกิด"),
-															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ผู้อำนวยการโรงเรียน", "ตำแหน่ง")
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("20 พ.ย. 2520 (39 ปี 10 เดือน)", "วันเกิด")
 														);
 														$img_url = "https://www.mx7.com/i/18d/piCF5A.png";
-														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "เลขสมาชิก : 00008073 (สมาชิกปกติ)", $img_url, $actions);
+														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "เลขสมาชิก : 00008073 (สมาชิกปกติ) ชื่อบัญชี : นาย00008073
+														เลขบัตรประชาชน : 3-5805-00056-66-8", $img_url, $actions);
 														$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
 		                    }
 					break;
@@ -139,11 +137,11 @@ foreach ($events as $event) {
 															} */
 															$actions = array (
 																// general message action
-
+																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("31 ก.ค. 2560", "งวดล่าสุด")
 															);
 															$img_url = "https://www.mx7.com/i/1ec/NqcxzX.png";
 															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("หุ้นสะสมรวม", "244,500.00 ฿", $img_url, $actions);
-															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
+															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลหุ้น", $button);
 													}
 						break;
 		case "สมัครสมาชิก" :
