@@ -105,14 +105,47 @@ foreach ($events as $event) {
 														$actions = array (
 															// general message action
 															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("3-5805-00056-66-8", "เลขบัตรประชาชน"),
-															// URL type action
-
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย00008073", "ชื่อบัญชี"),
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("20 พ.ย. 2520 (39 ปี 10 เดือน)", "วันเกิด"),
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ผู้อำนวยการโรงเรียน", "ตำแหน่ง")
 														);
-														$img_url = "https://iscobot.000webhostapp.com/img/photo.jpg";
+														$img_url = "https://www.mx7.com/i/18d/piCF5A.png";
 														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "00008073 (สมาชิกปกติ)", $img_url, $actions);
 														$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
 		                    }
 					break;
+					case "จำนวนหุ้น"	 :
+						$response = $bot->getProfile($event->getUserId());
+													if ($response->isSucceeded()) {
+															/* $sql = 'SELECT * FROM debit WHERE user_id = "'.$event->getUserId().'"';
+															$result = $conn->query($sql);
+															$row = $result->fetch_assoc();
+															if($row > 0 ){
+																$msg = "ยอดเงินคงเหลือ : ".$row["money"]."บาท";
+																$bot->replyText($reply_token, $msg);
+															}else{
+																$actions = array (
+																	// general message action
+																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("สมัครสมาชิก", "สมัครสมาชิก"),
+																	// URL type action
+																	New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สมัครสมาชิก", "https://iscobot.000webhostapp.com/web/register.php"),
+																	// The following two are interactive actions
+																	New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
+																	New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page=1")
+																);
+																$img_url = "https://iscobot.000webhostapp.com/img/photo.jpg";
+																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สมัครสมาชิก", "หน้าจอสมัครสมาชิก", $img_url, $actions);
+																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
+															} */
+															$actions = array (
+																// general message action
+
+															);
+															$img_url = "https://www.mx7.com/i/1ec/NqcxzX.png";
+															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("หุ้นสะสมรวม", "244,500.00 ฿", $img_url, $actions);
+															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
+													}
+						break;
 		case "สมัครสมาชิก" :
 		$response = $bot->getProfile($event->getUserId());
 									if ($response->isSucceeded()) {
