@@ -107,7 +107,7 @@ foreach ($events as $event) {
 															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("3-5805-00056-66-8", "เลขบัตรประชาชน"),
 															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย00008073", "ชื่อบัญชี"),
 															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("20 พ.ย. 2520 (39 ปี 10 เดือน)", "วันเกิด"),
-															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ผู้อำนวยการโรงเรียน", "ตำแหน่ง")
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ผู้อำนวยการโรงเรียน", "ตำแหน่ง"),
 														);
 														$img_url = "https://www.mx7.com/i/18d/piCF5A.png";
 														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "00008073 (สมาชิกปกติ)", $img_url, $actions);
