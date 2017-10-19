@@ -79,6 +79,40 @@ foreach ($events as $event) {
 													}
 	                    }
 				break;
+				case "ข้อมูลสมาชิก"	 :
+					$response = $bot->getProfile($event->getUserId());
+		                    if ($response->isSucceeded()) {
+														/* $sql = 'SELECT * FROM debit WHERE user_id = "'.$event->getUserId().'"';
+														$result = $conn->query($sql);
+														$row = $result->fetch_assoc();
+														if($row > 0 ){
+															$msg = "ยอดเงินคงเหลือ : ".$row["money"]."บาท";
+															$bot->replyText($reply_token, $msg);
+														}else{
+															$actions = array (
+																// general message action
+																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("สมัครสมาชิก", "สมัครสมาชิก"),
+																// URL type action
+																New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สมัครสมาชิก", "https://iscobot.000webhostapp.com/web/register.php"),
+																// The following two are interactive actions
+																New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
+																New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page=1")
+															);
+															$img_url = "https://iscobot.000webhostapp.com/img/photo.jpg";
+															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สมัครสมาชิก", "หน้าจอสมัครสมาชิก", $img_url, $actions);
+															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
+														} */
+														$actions = array (
+															// general message action
+															New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("3-5805-00056-66-8", "เลขบัตรประชาชน"),
+															// URL type action
+
+														);
+														$img_url = "https://iscobot.000webhostapp.com/img/photo.jpg";
+														$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ข้อมูลสมาชิก", "00008073 (สมาชิกปกติ)", $img_url, $actions);
+														$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลสมาชิก", $button);
+		                    }
+					break;
 		case "สมัครสมาชิก" :
 		$response = $bot->getProfile($event->getUserId());
 									if ($response->isSucceeded()) {
@@ -150,7 +184,7 @@ $bot->replyMessage($reply_token, $Imap);
  $bot->replyMessage($reply_token, $Imap);
 				break;
 		default :
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์อะไรไม่รู้เรื่องนะจ๊ะ");
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("กรุณาป้อนคำให้ถูกต้องด้วยค่ะ !!");
 			break;
 		}
 		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
