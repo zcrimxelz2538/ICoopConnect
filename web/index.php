@@ -129,7 +129,7 @@ foreach ($events as $event) {
 																$actions = array (
 																	// general message action
 																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย อรรถวุฒิ คำมาสาร", "ชื่อบัญชี"),
-																	New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ทำรายการล่าสุด : 28/12/59", "https://www.google.com"),
+																	New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ทำรายการล่าสุด : 28/12/59", "https://www.google.com")
 																);
 																$img_url = "https://www.mx7.com/i/0ef/zduNHo.png";
 																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "คงเหลือ : 100.00 ฿", $img_url, $actions);
@@ -155,7 +155,7 @@ foreach ($events as $event) {
 																$templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
 																$this->bot->replyMessage($replyToken, $templateMessage); */
 																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("616,531.00 ฿", "หนี้คงเหลือ"),
-																New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("วงเงินที่ได้รับอนุมัติ : 700,000.00 ฿", "https://www.google.com"),
+																New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("วงเงินที่ได้รับอนุมัติ : 700,000.00 ฿", "https://www.google.com")
 															);
 															$img_url = "https://www.mx7.com/i/205/7HKVmM.png";
 															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สค5600814", "ประเภทเงินกู้ : เงินกู้สามัญปกติ", $img_url, $actions);
