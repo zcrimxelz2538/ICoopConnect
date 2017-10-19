@@ -82,7 +82,7 @@ foreach ($events as $event) {
 				case "ข้อมูลสมาชิก"	 :
 					$response = $bot->getProfile($event->getUserId());
 		                    if ($response->isSucceeded()) {
-													if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
+													if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0" ||$event->getUserId() == "U3fe4a925c9ee4c98dbfef033ff453fbc"){
 														/* $sql = 'SELECT * FROM debit WHERE user_id = "'.$event->getUserId().'"';
 														$result = $conn->query($sql);
 														$row = $result->fetch_assoc();
@@ -119,7 +119,7 @@ foreach ($events as $event) {
 					case "จำนวนหุ้น"	 :
 						$response = $bot->getProfile($event->getUserId());
 													if ($response->isSucceeded()) {
-														if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
+														if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0" ||$event->getUserId() == "U3fe4a925c9ee4c98dbfef033ff453fbc"){
 															$actions = array (
 																// general message action
 																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("31 ก.ค. 2560", "งวดล่าสุด")
@@ -136,13 +136,13 @@ foreach ($events as $event) {
 						case "ยอดเงินฝาก"	 :
 							$response = $bot->getProfile($event->getUserId());
 														if ($response->isSucceeded()) {
-															if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
+															if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0" ||$event->getUserId() == "U3fe4a925c9ee4c98dbfef033ff453fbc"){
 																$actions = array (
 																	// general message action
 																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย อรรถวุฒิ คำมาสาร", "ชื่อบัญชี")
 																);
 																$img_url = "https://www.mx7.com/i/0ef/zduNHo.png";
-																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "คงเหลือ : 100.00 ฿", $img_url, $actions);
+																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "ประเภทบัญชี : ออมทรัพย์ ATM คงเหลือ : 100.00 ฿", $img_url, $actions);
 																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินฝาก", $button);
 															}else{
 																$msg = "ท่านยังไม่ได้สมัครสมาชิก iCoop Connect ค่ะ";
@@ -153,7 +153,7 @@ foreach ($events as $event) {
 							case "ยอดเงินกู้"	 :
 								$response = $bot->getProfile($event->getUserId());
 															if ($response->isSucceeded()) {
-																if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0"){
+																if($event->getUserId() == "U1eb44985232b28e0d61c89155d1da4c0" ||$event->getUserId() == "U3fe4a925c9ee4c98dbfef033ff453fbc"){
 																/* $columnTemplateBuilders = array();
 																$columnTitles = array('เงินกู้สามัญปกติ', 'เงินกู้สามัญ ATM');
 																foreach ($columnTitles as $title) {
