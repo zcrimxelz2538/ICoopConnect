@@ -154,6 +154,7 @@ foreach ($events as $event) {
 																$carouselTemplateBuilder = new CarouselTemplateBuilder($columnTemplateBuilders);
 																$templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
 																$this->bot->replyMessage($replyToken, $templateMessage); */
+															$actions = array (
 																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("616,531.00 ฿", "หนี้คงเหลือ"),
 																New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("วงเงินที่ได้รับอนุมัติ : 700,000.00 ฿", "https://www.google.com")
 															);
