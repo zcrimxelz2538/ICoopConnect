@@ -114,35 +114,54 @@ foreach ($events as $event) {
 					case "จำนวนหุ้น"	 :
 						$response = $bot->getProfile($event->getUserId());
 													if ($response->isSucceeded()) {
-															/* $sql = 'SELECT * FROM debit WHERE user_id = "'.$event->getUserId().'"';
-															$result = $conn->query($sql);
-															$row = $result->fetch_assoc();
-															if($row > 0 ){
-																$msg = "ยอดเงินคงเหลือ : ".$row["money"]."บาท";
-																$bot->replyText($reply_token, $msg);
-															}else{
-																$actions = array (
-																	// general message action
-																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("สมัครสมาชิก", "สมัครสมาชิก"),
-																	// URL type action
-																	New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สมัครสมาชิก", "https://iscobot.000webhostapp.com/web/register.php"),
-																	// The following two are interactive actions
-																	New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
-																	New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page=1")
-																);
-																$img_url = "https://iscobot.000webhostapp.com/img/photo.jpg";
-																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สมัครสมาชิก", "หน้าจอสมัครสมาชิก", $img_url, $actions);
-																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
-															} */
 															$actions = array (
 																// general message action
 																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("31 ก.ค. 2560", "งวดล่าสุด")
 															);
-															$img_url = "https://www.mx7.com/i/1ec/NqcxzX.png";
+															$img_url = "https://www.mx7.com/i/079/Idxymc.png";
 															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("หุ้นสะสมรวม", "244,500.00 ฿", $img_url, $actions);
 															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ข้อมูลหุ้น", $button);
 													}
 						break;
+						case "ยอดเงินฝาก"	 :
+							$response = $bot->getProfile($event->getUserId());
+														if ($response->isSucceeded()) {
+																$actions = array (
+																	// general message action
+																	New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("นาย อรรถวุฒิ คำมาสาร", "ชื่อบัญชี"),
+																	New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ทำรายการล่าสุด : 28/12/59", "https://www.google.com"),
+																);
+																$img_url = "https://www.mx7.com/i/0ef/zduNHo.png";
+																$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("88-01-002025", "คงเหลือ : 100.00 ฿", $img_url, $actions);
+																$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินฝาก", $button);
+														}
+							break;
+							case "ยอดเงินกู้"	 :
+								$response = $bot->getProfile($event->getUserId());
+															if ($response->isSucceeded()) {
+																/* $columnTemplateBuilders = array();
+																$columnTitles = array('เงินกู้สามัญปกติ', 'เงินกู้สามัญ ATM');
+																foreach ($columnTitles as $title) {
+																	$columnTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($title, 'description', $imageUrl,[
+																		new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Add to Card","action=carousel&button=".$i),
+																		new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("View","http://www.google.com")
+																	]);
+        													new UriTemplateActionBuilder('Go to line.me', 'https://line.me'),
+        													new PostbackTemplateActionBuilder('Buy', 'action=buy&itemid=123'),
+    														]);
+    														array_push($columnTemplateBuilders, $columnTemplateBuilder);
+																}
+																$carouselTemplateBuilder = new CarouselTemplateBuilder($columnTemplateBuilders);
+																$templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
+																$this->bot->replyMessage($replyToken, $templateMessage); */
+																New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("616,531.00 ฿", "หนี้คงเหลือ"),
+																New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("วงเงินที่ได้รับอนุมัติ : 700,000.00 ฿", "https://www.google.com"),
+															);
+															$img_url = "https://www.mx7.com/i/205/7HKVmM.png";
+															$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("สค5600814", "ประเภทเงินกู้ : เงินกู้สามัญปกติ", $img_url, $actions);
+															$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ยอดเงินกู้", $button);
+															}
+								break;
 		case "สมัครสมาชิก" :
 		$response = $bot->getProfile($event->getUserId());
 									if ($response->isSucceeded()) {
