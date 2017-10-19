@@ -41,7 +41,7 @@ foreach ($events as $event) {
 			$response = $bot->getProfile($event->getUserId());
                     if ($response->isSucceeded()) {
                         $profile = $response->getJSONDecodedBody();
-                        $msg = 'ชื่อ:' . $profile['displayName'] .' แคปชั่น:' . $profile['statusMessage'];
+                        $msg = 'UserID:' . $event->getUserId();
                         $bot->replyText($reply_token, $msg);
                     }
 			break;
