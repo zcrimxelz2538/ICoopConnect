@@ -7,8 +7,8 @@ use Monolog\Handler\FirePHPHandler;
 
 $logger = new Logger('LineBot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('/ts/l7Ae8dUAyugnozVRofWcumNGm1oF0b7/ekWB595KpXPyklTUv0F6ckzi20FZhI/77xry/Avhpef/uT8cZ8DH+NrEk6sdBW6G9msPlz3p/pHfKJmE7jjTHE3zdwW34+3gl6+o0Vtx0yq1Zo1b+wdB04t89/1O/w1cDnyilFU=');
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '41826fc188564eba1cdc3f63f590b982']);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('Kz9G6ukFLu/lwhVGDb7lLITtkLOAROGUfaOMchXCfIJRLPBeMWw1n+7OdSAYDhPjhI/77xry/Avhpef/uT8cZ8DH+NrEk6sdBW6G9msPlz1xsDLTvuTHRUOntLV5pQIJAHiTQgbYqIOdY7xs9J96FgdB04t89/1O/w1cDnyilFU=');
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '843faff7c38050d710bea02998f04d20']);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
 	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
