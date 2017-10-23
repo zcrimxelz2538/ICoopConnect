@@ -1,5 +1,5 @@
 <?php
-$host = "databases.000webhost.com";
+$host = "iscobot.000webhostapp.com";
 $username = "id3208133_neynez";
 $password = "neynez";
 $dbname = "id3208133_iscobot";
