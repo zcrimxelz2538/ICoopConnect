@@ -7,8 +7,8 @@ use Monolog\Handler\FirePHPHandler;
 
 $logger = new Logger('LineBot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('Kz9G6ukFLu/lwhVGDb7lLITtkLOAROGUfaOMchXCfIJRLPBeMWw1n+7OdSAYDhPjhI/77xry/Avhpef/uT8cZ8DH+NrEk6sdBW6G9msPlz1xsDLTvuTHRUOntLV5pQIJAHiTQgbYqIOdY7xs9J96FgdB04t89/1O/w1cDnyilFU=');
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '843faff7c38050d710bea02998f04d20']);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('VFsDabvUPPUMhOZu0YN1yWSyF0o/WUKxl60SWZ1t0Y7cEpQk8YNc56i+tkAwMqJbhI/77xry/Avhpef/uT8cZ8DH+NrEk6sdBW6G9msPlz3b0uEsAT5o5QVhNcrZ5DCyEzmAbFuxkF3ZgkqSwTUl7wdB04t89/1O/w1cDnyilFU=');
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9742a87ef07430075fb7b77cc1d977ca']);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 if(empty($signature)){
 	echo "400";
