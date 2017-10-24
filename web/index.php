@@ -10,11 +10,7 @@ $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('VFsDabvUPPUMhOZu0YN1yWSyF0o/WUKxl60SWZ1t0Y7cEpQk8YNc56i+tkAwMqJbhI/77xry/Avhpef/uT8cZ8DH+NrEk6sdBW6G9msPlz3b0uEsAT5o5QVhNcrZ5DCyEzmAbFuxkF3ZgkqSwTUl7wdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9742a87ef07430075fb7b77cc1d977ca']);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
-if(empty($signature)){
-	echo "400";
-}else{
-	echo $signature;
-}
+
 try {
 	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
 } catch(\LINE\LINEBot\Exception\InvalidSignatureException $e) {
